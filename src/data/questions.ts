@@ -1382,6 +1382,273 @@ export const questions: Question[] = [
       'Practice: 48×52 = 2496, 97×103 = 9991'
     ]
   },
+
+  // ===== ACCOUNTING (continued) =====
+  {
+    id: 'acc-023',
+    category: 'accounting',
+    subcategory: 'Three Statements',
+    difficulty: 'easy',
+    question: 'A company raises $200M through a follow-on equity offering. Walk me through the impact on all three financial statements.',
+    answer: 'Income Statement: No immediate impact on net income. Going forward, the higher share count will dilute EPS (assuming earnings do not grow proportionally with the new capital raised). Cash Flow Statement: +$200M inflow in Financing Activities (proceeds from issuance of common stock). Balance Sheet: Cash increases by $200M; equity (specifically Additional Paid-In Capital) increases by $200M. Total assets up $200M equals total equity up $200M—the balance sheet balances. Unlike a debt raise, there is no interest expense and no future repayment obligation, but existing shareholders are diluted.',
+    keyPoints: [
+      'IS: No immediate impact; future EPS diluted by more shares',
+      'CFS: +$200M in Financing Activities',
+      'BS: Cash +$200M, APIC (equity) +$200M',
+      'No interest expense, no repayment obligation',
+      'Existing shareholders diluted — ownership % decreases'
+    ]
+  },
+  {
+    id: 'acc-024',
+    category: 'accounting',
+    subcategory: 'Income Statement',
+    difficulty: 'medium',
+    question: 'What is the difference between capitalizing and expensing a cost? Walk through the financial statement impact of each.',
+    answer: 'Expensing: the full cost hits the Income Statement immediately, reducing pre-tax income and net income in the current period. Capitalizing: the cost is recorded as an asset on the Balance Sheet and expensed gradually through depreciation or amortization over its useful life. Example with a $120M cost at 30% tax rate: If expensed → IS: NI falls $84M; CFS: operating CF falls $84M (or investing if CapEx); BS: Cash −$120M, RE −$84M. If capitalized (10-year life) → IS: only $12M/yr D&A hits; NI falls $8.4M/yr; BS: Cash −$120M, PP&E +$120M. Key rule: costs that provide future benefit are capitalized (PP&E, software); period costs are expensed (R&D under US GAAP, SG&A). Capitalizing boosts near-term earnings but creates future depreciation drag.',
+    keyPoints: [
+      'Expense: full cost hits IS immediately → lower NI now',
+      'Capitalize: record as asset, depreciate over useful life → lower NI spread over time',
+      'Capitalizing boosts near-term earnings vs. expensing',
+      'Both have same total long-run income impact',
+      'US GAAP: R&D expensed; IFRS: development costs can be capitalized'
+    ]
+  },
+  {
+    id: 'acc-025',
+    category: 'accounting',
+    subcategory: 'Balance Sheet',
+    difficulty: 'medium',
+    question: 'Walk me through the PP&E rollforward. How does PP&E on the balance sheet change from one period to the next?',
+    answer: 'Net PP&E(end) = Net PP&E(begin) + CapEx − Depreciation − Net Book Value of Disposals. Starting with gross PP&E, you add new capital expenditures (acquisitions, construction), then subtract the accumulated depreciation charge for the period (D&A expense), and remove any assets sold or written off at their net book value. The result is ending net PP&E. This rollforward links directly to the financial statements: CapEx appears as a cash outflow in Investing Activities on the CFS; D&A appears as an operating expense on the IS and a non-cash add-back in Operating Activities on the CFS. Analysts use PP&E rollforwards to verify CapEx assumptions in models and assess asset intensity.',
+    keyPoints: [
+      'Net PP&E(end) = Net PP&E(begin) + CapEx − D&A − Disposals',
+      'CapEx → Investing Activities on CFS (cash outflow)',
+      'D&A → Operating expense on IS; add-back on CFS',
+      'Gross PP&E − Accumulated Depreciation = Net PP&E',
+      'Key model check: CFS CapEx must tie to BS PP&E change'
+    ]
+  },
+
+  // ===== VALUATION (continued) =====
+  {
+    id: 'val-017',
+    category: 'valuation',
+    subcategory: 'Valuation Mechanics',
+    difficulty: 'medium',
+    question: 'When would you use EV/EBIT instead of EV/EBITDA as a valuation multiple?',
+    answer: 'EV/EBIT is preferred when D&A is economically meaningful and should not be added back. EBITDA strips out depreciation entirely, treating all companies as if asset wear-and-tear is costless. For capital-intensive businesses where D&A is a reasonable proxy for maintenance CapEx, this distorts comparisons—a company that spends heavily on assets looks artificially cheap on EV/EBITDA. Use EV/EBIT for: heavy manufacturing, utilities, telecom, transportation, mining/resources where assets must be continuously replaced. Also use when companies have very different depreciation policies or asset lives, making EBITDA non-comparable. EV/EBITDA remains more popular in practice because it is closer to cash flow, but EV/EBIT is the more intellectually honest multiple for asset-heavy industries.',
+    keyPoints: [
+      'EV/EBIT keeps D&A as a cost; EV/EBITDA adds it back',
+      'Use EV/EBIT when D&A ≈ maintenance CapEx (heavy industries)',
+      'Asset-heavy: manufacturing, utilities, telecom, transportation',
+      'EBITDA overstates cash flow for capital-intensive businesses',
+      'EV/EBITDA still more widely used due to simplicity'
+    ]
+  },
+  {
+    id: 'val-018',
+    category: 'valuation',
+    subcategory: 'Enterprise Value',
+    difficulty: 'hard',
+    question: 'How do you treat minority interest (non-controlling interest) when calculating Enterprise Value in a comps analysis?',
+    answer: 'Minority interest must be added to Enterprise Value. The reason is a consistency principle: when a parent owns, say, 80% of a subsidiary, it consolidates 100% of the subsidiary\'s revenue and EBITDA into its financials. But only 80% of the equity value belongs to the parent—the other 20% belongs to minority shareholders. So EV (which should reflect total claims on the business) must include this minority interest. If you omit it, EV is understated relative to EBITDA, artificially lowering the EV/EBITDA multiple. In practice, minority interest is added at book value from the balance sheet if the subsidiary is not publicly traded, or at market value if it is. Formula: EV = Market Cap + Net Debt + Preferred Stock + Minority Interest.',
+    keyPoints: [
+      'Parent consolidates 100% of subsidiary EBITDA but only owns ~80%',
+      'EV must include 20% minority interest for consistency',
+      'Omitting minority interest understates EV → artificially low multiple',
+      'Add at book value (private sub) or market value (public sub)',
+      'EV = Mkt Cap + Net Debt + Preferred + Minority Interest'
+    ]
+  },
+  {
+    id: 'val-019',
+    category: 'valuation',
+    subcategory: 'Methodologies',
+    difficulty: 'medium',
+    question: 'How is an LBO analysis used as a valuation methodology? What does it tell you?',
+    answer: 'An LBO analysis establishes a "floor" valuation—the maximum price a financial sponsor could pay and still achieve its minimum required return (typically 20-25% IRR). By working backwards from a target IRR, assumed leverage, and exit multiple, you can solve for the implied maximum entry EV or offer price. In a sell-side M&A process, bankers include LBO analysis in the football field to show clients the minimum price PE firms would pay. It answers: "Would private equity be interested, and at what price?" If the LBO-implied value is well below comps and precedents, it suggests PE buyers may be outbid by strategics. If LBO value is close to strategic value, it signals competitive tension and a potentially strong auction.',
+    keyPoints: [
+      'LBO analysis sets the valuation floor (PE buyer\'s max entry price)',
+      'Solve for entry price that achieves target IRR (20-25%)',
+      'Inputs: leverage assumptions, EBITDA growth, exit multiple, hold period',
+      'Used in football field chart alongside comps, precedents, DCF',
+      'High LBO value = strong PE interest = competitive auction'
+    ]
+  },
+
+  // ===== DCF (continued) =====
+  {
+    id: 'dcf-013',
+    category: 'dcf',
+    subcategory: 'WACC',
+    difficulty: 'hard',
+    question: 'How do you calculate the cost of preferred stock and how does it factor into WACC?',
+    answer: 'Cost of preferred stock (Rp) = Annual Preferred Dividend / Market Price of Preferred Stock. Unlike debt interest, preferred dividends are paid from after-tax income—they are not tax-deductible. Therefore, there is no tax shield adjustment. Extended WACC formula: WACC = (E/V)×Re + (D/V)×Rd×(1−T) + (P/V)×Rp, where P = preferred stock market value, V = E + D + P, Rp = preferred dividend yield. Preferred stock is a hybrid security: fixed dividend (like debt) but subordinated to debt and sits above common equity. In practice, most companies have minimal preferred stock, so it is often excluded from WACC or immaterial. It is more significant for financial institutions, utilities, and REITs.',
+    keyPoints: [
+      'Cost of preferred = Annual Dividend / Market Price of Preferred',
+      'No tax shield: preferred dividends paid from after-tax income',
+      'Extended WACC: + (P/V) × Rp',
+      'Preferred: fixed dividends but junior to debt, senior to common',
+      'Usually immaterial; more significant for banks, utilities, REITs'
+    ]
+  },
+  {
+    id: 'dcf-014',
+    category: 'dcf',
+    subcategory: 'DCF Assumptions',
+    difficulty: 'hard',
+    question: 'What is a circular reference in a financial model and how do you handle it?',
+    answer: 'A circular reference occurs when a formula refers back to itself through a chain of calculations. In financial models, the classic example is interest expense: interest expense depends on the debt balance, which depends on net income (after interest), which depends on interest expense. Another example: a revolver drawn based on cash shortfall, which depends on net income, which depends on interest on the revolver. Solutions: (1) Use beginning-of-period debt balance to calculate interest (simple approximation, eliminates circularity with minimal error). (2) Enable Excel\'s iterative calculations—the model recalculates repeatedly until values converge. (3) Use a plug-and-check approach. Most LBO models use iterative calculations because the revolver and interest expense are inherently circular. The risk with iterative calculations is that Excel may converge on a wrong answer if the initial state is far off.',
+    keyPoints: [
+      'Classic example: interest expense ↔ debt balance ↔ net income',
+      'Solution 1: use beginning-of-period balance (simple, accurate)',
+      'Solution 2: enable Excel iterative calculations',
+      'LBO models commonly use iterative calcs for revolver/interest',
+      'Risk: iterative calcs can converge on wrong answer'
+    ]
+  },
+
+  // ===== M&A (continued) =====
+  {
+    id: 'ma-017',
+    category: 'ma',
+    subcategory: 'Deal Structure',
+    difficulty: 'medium',
+    question: 'In an all-stock deal, if the acquirer\'s P/E is 15x and the acquisition price implies a P/E of 25x, is the deal accretive or dilutive? Explain the P/E crossover rule.',
+    answer: 'The deal is dilutive. In an all-stock deal, the acquirer issues shares (valued at 15x earnings) to buy a target (priced at 25x earnings). Each share issued buys fewer earnings than it represents—you are giving up 15x earnings power to acquire 25x earnings power. P/E Crossover Rule: all-stock deal is accretive if acquirer P/E > acquisition P/E, dilutive if acquirer P/E < acquisition P/E. Intuition: if you issue a share worth $150 (15× $10 EPS) to acquire a company at $250 (25× earnings), you need that company to earn more than $10 to offset the $10 EPS you "gave up." Synergies can bridge the gap—sufficient cost or revenue synergies can turn a dilutive deal accretive.',
+    keyPoints: [
+      'Dilutive when acquirer P/E < acquisition P/E (15x < 25x)',
+      'P/E crossover rule: accretive if acquirer P/E > deal P/E',
+      'Issuing cheap stock (low P/E) to buy expensive target = dilutive',
+      'Issuing expensive stock (high P/E) to buy cheap target = accretive',
+      'Synergies can turn a dilutive deal accretive'
+    ]
+  },
+  {
+    id: 'ma-018',
+    category: 'ma',
+    subcategory: 'M&A Concepts',
+    difficulty: 'medium',
+    question: 'What is a merger of equals (MOE) and how does it differ from a standard acquisition?',
+    answer: 'A merger of equals is a combination of two companies of roughly similar size where no party pays a traditional control premium and neither is clearly the "acquirer." Key features: (1) All-stock deal—no cash premium; shareholders of both companies receive shares in the combined entity at a negotiated exchange ratio based on relative valuations. (2) Combined leadership—co-CEO structure or shared board, leading to governance complexity. (3) No goodwill or minimal premium—so no large intangibles D&A hit post-close. (4) Shareholder votes required from both sides. (5) Presented as a "merger" rather than an acquisition to avoid negative connotations. In practice, true mergers of equals are rare—one party usually exerts more control. Famous examples: Pfizer/Warner-Lambert, Dow/DuPont. They often struggle with integration due to shared decision-making.',
+    keyPoints: [
+      'All-stock deal at negotiated exchange ratio; no cash premium',
+      'Neither party is "acquirer"; both shareholder bases must approve',
+      'No control premium → minimal goodwill creation',
+      'Combined leadership often creates governance challenges',
+      'True MOEs are rare; one party usually dominates post-close'
+    ]
+  },
+
+  // ===== LBO (continued) =====
+  {
+    id: 'lbo-015',
+    category: 'lbo',
+    subcategory: 'LBO Returns',
+    difficulty: 'hard',
+    question: 'What happens to LBO equity returns if EBITDA declines 20% during the hold period? Walk through the mechanics.',
+    answer: 'An EBITDA decline has a compounding negative effect on equity. Example: PE buys at 8x on $100M EBITDA = $800M EV, $480M debt, $320M equity. EBITDA falls to $80M. (1) Exit EV falls: at same 8x exit multiple, EV = $80M × 8 = $640M—$160M lower than entry. (2) Debt paydown is impaired—less FCF to service debt, so more debt remains. Assume debt stays at $480M (worst case, no paydown). Equity = $640M − $480M = $160M vs $320M invested → loss of 50%. (3) Covenant breach risk: at $80M EBITDA, leverage = $480M/$80M = 6.0x—potentially breaching senior debt covenants. (4) If the business recovers but the timeline extends, IRR deteriorates even if MOIC recovers. Leverage turns every dollar of EBITDA decline into multiple dollars of equity loss.',
+    keyPoints: [
+      'Exit EV falls: $80M × 8x = $640M vs $800M entry',
+      'Less FCF for debt paydown → higher remaining debt at exit',
+      'Equity value compressed on both sides (lower EV, higher debt)',
+      'Covenant breach risk: higher Net Debt/EBITDA ratio',
+      'Leverage amplifies losses just as it amplifies gains'
+    ]
+  },
+  {
+    id: 'lbo-016',
+    category: 'lbo',
+    subcategory: 'LBO Overview',
+    difficulty: 'medium',
+    question: 'When does leverage enhance returns in an LBO and when does it hurt?',
+    answer: 'Leverage enhances returns when: (1) the company generates stable, predictable cash flows sufficient to service interest and repay principal, (2) the entry multiple is reasonable relative to cash flows, (3) operating performance meets or exceeds projections, (4) interest rates are manageable, and (5) the business is not cyclical. Mechanism: PE invests less equity for the same asset; all upside above the purchase price goes to equity. Leverage hurts when: (1) cash flows are volatile (can\'t cover debt service in downturns), (2) too much leverage leaves no margin of safety, (3) covenants are breached forcing renegotiation, (4) rising rates increase interest burden (floating rate debt), (5) a recession or operational miss compresses EBITDA and equity gets wiped out. The LBO thesis must be stress-tested against downside scenarios.',
+    keyPoints: [
+      'Helps: stable cash flows, reasonable entry, good operations, low rates',
+      'Hurts: volatile cash flows, high leverage, covenant breach, rising rates',
+      'Leverage amplifies gains AND losses symmetrically',
+      'Stress test: what if EBITDA falls 20%? Can debt be serviced?',
+      'Good LBO: multiple ways to win; bad LBO: only works in base case'
+    ]
+  },
+
+  // ===== BRAIN TEASERS (continued) =====
+  {
+    id: 'bt-011',
+    category: 'brainteasers',
+    subcategory: 'Math',
+    difficulty: 'easy',
+    question: 'What is the Rule of 72? Use it to estimate how long it takes an investment to double at 8%, 12%, and 20% returns.',
+    answer: 'The Rule of 72 states that the number of years to double an investment ≈ 72 / Annual Return (%). At 8%: 72/8 = 9 years. At 12%: 72/12 = 6 years. At 20%: 72/20 = 3.6 years. It also works in reverse: if an investment doubles in 4 years, implied return ≈ 72/4 = 18%. This is invaluable for quick PE return sanity checks. PE target IRR of 20-25% means they need to approximately double equity every 3-4 years. The Rule of 72 is accurate within ~1% for returns in the 6-20% range. For very high or low rates, use Rule of 70 or Rule of 69.3 (natural log approximation) for better accuracy.',
+    keyPoints: [
+      'Years to double ≈ 72 / Return (%)',
+      '8% → 9 years; 12% → 6 years; 20% → 3.6 years',
+      'Reverse: if doubles in N years → return ≈ 72/N',
+      'PE at 20% IRR needs to double equity every ~3.6 years',
+      'Accurate for returns in 6-20% range'
+    ]
+  },
+  {
+    id: 'bt-012',
+    category: 'brainteasers',
+    subcategory: 'Math',
+    difficulty: 'medium',
+    question: 'A company\'s revenue was $300M in 2020 and grew to $600M by 2025. What is the CAGR? How would you estimate it quickly?',
+    answer: 'Exact CAGR = (600/300)^(1/5) − 1 = 2^(0.2) − 1 ≈ 14.9%. Quick estimation using Rule of 72: revenue doubled in 5 years → CAGR ≈ 72/5 = 14.4%. Close enough for an interview. The general CAGR formula: (Ending Value / Beginning Value)^(1/n) − 1, where n = number of years. Key benchmarks to memorize: 2x in 3yr ≈ 26%; 2x in 4yr ≈ 19%; 2x in 5yr ≈ 15%; 3x in 5yr ≈ 25%. When given a starting and ending value and asked for growth, think in multiples first, then estimate using these benchmarks.',
+    keyPoints: [
+      'CAGR = (End/Start)^(1/n) − 1 = 2^(0.2) − 1 ≈ 14.9%',
+      'Quick: Rule of 72 → doubled in 5 years ≈ 14.4%',
+      'Benchmarks: 2x/5yr≈15%, 2x/4yr≈19%, 3x/5yr≈25%',
+      'Think in multiples first, then use benchmarks',
+      'Rule of 72 gives good approximation for interview purposes'
+    ]
+  },
+  {
+    id: 'bt-013',
+    category: 'brainteasers',
+    subcategory: 'Conceptual',
+    difficulty: 'medium',
+    question: 'A company does a 2-for-1 stock split. What happens to EPS, the stock price, market cap, and P/E ratio?',
+    answer: 'A stock split is purely cosmetic—it creates no economic value. Each existing share is replaced by 2 shares at half the price. Share count: doubles (e.g., 50M → 100M). Stock price: halves (e.g., $40 → $20). Market cap: unchanged ($40 × 50M = $20 × 100M = $2B). EPS: halves (same net income / double the shares: $2.00 → $1.00). P/E ratio: unchanged (was $40/$2.00 = 20x; now $20/$1.00 = 20x). The split makes shares more accessible to retail investors (lower price per share) but creates no new value. Contrast this with a dilutive equity issuance, which does hurt EPS because new shares are sold but the proceeds must earn a return to be accretive.',
+    keyPoints: [
+      'Stock split: purely cosmetic, no economic value created',
+      'Price halves, shares double, market cap unchanged',
+      'EPS halves; P/E ratio unchanged',
+      'Makes shares more accessible at lower price per share',
+      'Contrast: dilutive issuance does hurt EPS (new shares sold for cash)'
+    ]
+  },
+  {
+    id: 'bt-014',
+    category: 'brainteasers',
+    subcategory: 'Conceptual',
+    difficulty: 'hard',
+    question: 'Walk me through what happens to the three financial statements when a company issues $100M of convertible debt at 2% interest.',
+    answer: 'At issuance — Balance Sheet: Cash +$100M; Convertible Debt (liability) +$100M. IS/CFS: no impact at issuance. Ongoing (while outstanding) — Income Statement: Interest expense = $100M × 2% = $2M/year, reducing pre-tax income. After 30% tax: net income falls $1.4M/year. CFS: $2M cash interest outflow in Operating Activities. BS: cash decreases $2M/year (interest payments); debt stays at $100M. Upon conversion — when holders convert to equity: Debt −$100M, Common Stock/APIC +$100M on the Balance Sheet. No cash impact. Share count increases (dilutive). Interest expense disappears. For diluted EPS, the convertible shares are included via the if-converted method: add back after-tax interest to numerator, add converted shares to denominator.',
+    keyPoints: [
+      'Issuance: Cash +$100M, Convertible Debt +$100M; no IS impact',
+      'Ongoing: $2M interest expense/year reduces NI by $1.4M (after tax)',
+      'Conversion: Debt −$100M, APIC +$100M; no cash; shares increase',
+      'Diluted EPS: if-converted method (add back interest, add shares)',
+      'Low coupon convertibles: cheap financing but future dilution risk'
+    ]
+  },
+  {
+    id: 'bt-015',
+    category: 'brainteasers',
+    subcategory: 'Conceptual',
+    difficulty: 'easy',
+    question: 'Why might a company choose to issue debt rather than equity to fund an acquisition?',
+    answer: 'Several reasons to prefer debt: (1) Tax benefit—interest expense is tax-deductible, reducing the after-tax cost of debt. Equity dividends are not deductible. (2) No dilution—debt does not dilute existing shareholders\' ownership or EPS (assuming the acquisition is accretive). (3) Signal of confidence—issuing equity can signal that management thinks the stock is overvalued; taking on debt signals confidence in cash flows. (4) Lower cost—cost of debt (after-tax) is typically lower than cost of equity because debtholders have priority in bankruptcy. (5) Speed—debt can be arranged faster than a public equity offering. Reasons to prefer equity: if leverage is already high, financial flexibility is constrained, or the deal is very large relative to the acquirer\'s size.',
+    keyPoints: [
+      'Tax shield: interest is deductible, reducing after-tax cost',
+      'No dilution: existing shareholders retain ownership %',
+      'Debt signals confidence in cash flow generation',
+      'Lower cost of capital than equity (priority in bankruptcy)',
+      'Prefer equity when: already levered, deal is very large, stock is overvalued'
+    ]
+  },
 ];
 
 export const getQuestionsByCategory = (category: Category) =>
