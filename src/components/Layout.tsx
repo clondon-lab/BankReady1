@@ -1,6 +1,6 @@
 import { type ReactNode } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { BookOpen, CreditCard, BarChart2, Gamepad2, Home, TrendingUp, LogOut, Briefcase } from 'lucide-react';
+import { BookOpen, CreditCard, BarChart2, Gamepad2, Home, TrendingUp, LogOut, Briefcase, Users } from 'lucide-react';
 
 const navItems = [
   { path: '/', label: 'Home', icon: Home },
@@ -8,6 +8,7 @@ const navItems = [
   { path: '/flashcards', label: 'Flashcards', icon: CreditCard },
   { path: '/quiz', label: 'Quiz', icon: BarChart2 },
   { path: '/games', label: 'Games', icon: Gamepad2 },
+  { path: '/hubs', label: 'Hubs', icon: Users },
   { path: '/tracker', label: 'Tracker', icon: Briefcase },
 ];
 

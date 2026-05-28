@@ -11,6 +11,9 @@ import Flashcards from './pages/Flashcards';
 import Quiz from './pages/Quiz';
 import Games from './pages/Games';
 import RecruitingTracker from './pages/RecruitingTracker';
+import Hubs from './pages/Hubs';
+import HubDashboard from './pages/HubDashboard';
+import Game from './pages/Game';
 
 export default function App() {
   const [session, setSession] = useState<Session | null>(null);
@@ -48,6 +51,9 @@ export default function App() {
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/games" element={<Games />} />
           <Route path="/tracker" element={<RecruitingTracker />} />
+          <Route path="/hubs" element={<Hubs />} />
+          <Route path="/hubs/:hubId" element={<HubDashboard />} />
+          <Route path="/hubs/:hubId/game/:sessionId" element={<Game />} />
         </Routes>
       </Layout>
     </BrowserRouter>
