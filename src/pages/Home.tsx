@@ -14,7 +14,7 @@ const features = [
     path: '/flashcards',
     icon: CreditCard,
     title: 'Flashcards',
-    description: '30+ notecards covering key formulas, concepts, and definitions. Flip to reveal answers.',
+    description: '60+ notecards covering key formulas, concepts, and definitions. Flip to reveal answers.',
     color: 'from-emerald-600 to-emerald-800',
     accent: 'bg-emerald-500/20 text-emerald-400',
   },
@@ -37,8 +37,8 @@ const features = [
 ];
 
 const stats = [
-  { label: 'Technical Questions', value: '40+', icon: Target },
-  { label: 'Flashcards', value: '30+', icon: Zap },
+  { label: 'Technical Questions', value: '90+', icon: Target },
+  { label: 'Flashcards', value: '60+', icon: Zap },
   { label: 'Topic Modules', value: '5', icon: BookOpen },
   { label: 'Game Modes', value: '4', icon: Award },
 ];
