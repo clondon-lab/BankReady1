@@ -311,6 +311,7 @@ export default function Quiz() {
         ← Exit Quiz
       </button>
       <QuestionCard
+        key={currentIdx}
         question={quizQuestions[currentIdx]}
         questionNum={currentIdx + 1}
         totalQuestions={quizQuestions.length}
