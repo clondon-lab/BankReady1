@@ -37,7 +37,7 @@ const features = [
 ];
 
 const stats = [
-  { label: 'Technical Questions', value: '90+', icon: Target },
+  { label: 'Technical Questions', value: '105+', icon: Target },
   { label: 'Flashcards', value: '60+', icon: Zap },
   { label: 'Topic Modules', value: '5', icon: BookOpen },
   { label: 'Game Modes', value: '4', icon: Award },
