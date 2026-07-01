@@ -6,7 +6,7 @@ const features = [
     path: '/courses',
     icon: BookOpen,
     title: 'Courses',
-    description: 'Structured lessons on Accounting, Valuation, DCF, M&A, and LBO from BIWS & WSP frameworks',
+    description: 'Structured lessons on Accounting, EV, Valuation, DCF, M&A, LBO, Brain Teasers, and Fit from BIWS & WSP frameworks',
     color: 'from-blue-600 to-blue-800',
     accent: 'bg-blue-500/20 text-blue-400',
   },
@@ -14,7 +14,7 @@ const features = [
     path: '/flashcards',
     icon: CreditCard,
     title: 'Flashcards',
-    description: '60+ notecards covering key formulas, concepts, and definitions. Flip to reveal answers.',
+    description: '150+ notecards covering key formulas, concepts, and definitions across all 8 topic areas.',
     color: 'from-emerald-600 to-emerald-800',
     accent: 'bg-emerald-500/20 text-emerald-400',
   },
@@ -37,19 +37,21 @@ const features = [
 ];
 
 const stats = [
-  { label: 'Technical Questions', value: '105+', icon: Target },
-  { label: 'Flashcards', value: '60+', icon: Zap },
-  { label: 'Topic Modules', value: '5', icon: BookOpen },
+  { label: 'Technical Questions', value: '70+', icon: Target },
+  { label: 'Flashcards', value: '150+', icon: Zap },
+  { label: 'Topic Modules', value: '8', icon: BookOpen },
   { label: 'Game Modes', value: '4', icon: Award },
 ];
 
 const topics = [
   { label: 'Accounting', color: 'bg-blue-500/20 text-blue-300 border-blue-500/30' },
+  { label: 'EV & Equity Value', color: 'bg-teal-500/20 text-teal-300 border-teal-500/30' },
   { label: 'Valuation', color: 'bg-green-500/20 text-green-300 border-green-500/30' },
-  { label: 'DCF Analysis', color: 'bg-teal-500/20 text-teal-300 border-teal-500/30' },
-  { label: 'M&A / Mergers', color: 'bg-purple-500/20 text-purple-300 border-purple-500/30' },
+  { label: 'DCF Analysis', color: 'bg-purple-500/20 text-purple-300 border-purple-500/30' },
+  { label: 'M&A / Mergers', color: 'bg-indigo-500/20 text-indigo-300 border-indigo-500/30' },
   { label: 'LBO Analysis', color: 'bg-amber-500/20 text-amber-300 border-amber-500/30' },
   { label: 'Brain Teasers', color: 'bg-red-500/20 text-red-300 border-red-500/30' },
+  { label: 'Fit & Behavioral', color: 'bg-pink-500/20 text-pink-300 border-pink-500/30' },
 ];
 
 export default function Home() {

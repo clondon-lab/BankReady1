@@ -6,66 +6,114 @@ type QuizMode = 'select' | 'quiz' | 'results';
 
 const categoryLabels: Record<Category, string> = {
   accounting: '📊 Accounting',
+  ev: '⚖️ EV & Equity Value',
   valuation: '💰 Valuation',
   dcf: '📉 DCF Analysis',
   ma: '🤝 M&A',
   lbo: '📈 LBO',
   brainteasers: '🧠 Brain Teasers',
+  fit: '🎯 Fit & Behavioral',
 };
 
-const difficultyColors = {
-  easy: 'bg-green-500/20 text-green-400 border-green-500/30',
-  medium: 'bg-amber-500/20 text-amber-400 border-amber-500/30',
-  hard: 'bg-red-500/20 text-red-400 border-red-500/30',
+const difficultyColors: Record<string, string> = {
+  beginner: 'bg-green-500/20 text-green-400 border-green-500/30',
+  intermediate: 'bg-amber-500/20 text-amber-400 border-amber-500/30',
+  advanced: 'bg-red-500/20 text-red-400 border-red-500/30',
 };
 
-function QuestionCard({
+function MCQCard({
   question,
-  questionNum,
-  totalQuestions,
   onAnswer,
 }: {
-  question: Question;
-  questionNum: number;
-  totalQuestions: number;
-  onAnswer: (knew: boolean) => void;
+  question: Extract<Question, { type: 'mcq' }>;
+  onAnswer: (correct: boolean) => void;
 }) {
-  const [revealed, setRevealed] = useState(false);
+  const [selected, setSelected] = useState<number | null>(null);
 
-  const handleReveal = () => setRevealed(true);
+  const handleSelect = (idx: number) => {
+    if (selected !== null) return;
+    setSelected(idx);
+  };
+
+  const correct = selected === question.correctIndex;
 
   return (
     <div className="animate-fade-in-up">
-      <div className="flex items-center justify-between mb-4">
-        <span className="text-slate-400 text-sm">
-          Question {questionNum} of {totalQuestions}
-        </span>
-        <span className={`text-xs font-semibold px-2 py-1 rounded-full border ${difficultyColors[question.difficulty]}`}>
-          {question.difficulty}
-        </span>
-      </div>
-
-      <div className="w-full bg-slate-800 rounded-full h-1.5 mb-6">
-        <div
-          className="bg-amber-500 h-1.5 rounded-full transition-all duration-500"
-          style={{ width: `${((questionNum - 1) / totalQuestions) * 100}%` }}
-        />
-      </div>
-
-      {/* Category badge */}
-      <span className="text-xs font-medium text-slate-400 bg-slate-800 px-3 py-1 rounded-full mb-4 inline-block">
-        {categoryLabels[question.category]}
-      </span>
-
-      {/* Question */}
       <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 mb-4">
         <h2 className="text-lg font-semibold text-white leading-relaxed">{question.question}</h2>
       </div>
 
-      {/* Answer */}
+      <div className="space-y-3 mb-4">
+        {question.options.map((opt, idx) => {
+          let cls = 'border-slate-700 bg-slate-800/50 text-slate-300 hover:border-slate-500 hover:bg-slate-800';
+          if (selected !== null) {
+            if (idx === question.correctIndex) {
+              cls = 'border-green-500 bg-green-500/15 text-green-300';
+            } else if (idx === selected && idx !== question.correctIndex) {
+              cls = 'border-red-500 bg-red-500/15 text-red-300';
+            } else {
+              cls = 'border-slate-700 bg-slate-800/30 text-slate-500';
+            }
+          }
+          return (
+            <button
+              key={idx}
+              onClick={() => handleSelect(idx)}
+              disabled={selected !== null}
+              className={`w-full text-left p-4 rounded-xl border font-medium text-sm transition-all flex items-center gap-3 ${cls}`}
+            >
+              <span className="w-6 h-6 rounded-full border border-current flex items-center justify-center text-xs font-bold flex-shrink-0">
+                {String.fromCharCode(65 + idx)}
+              </span>
+              {opt}
+            </button>
+          );
+        })}
+      </div>
+
+      {selected !== null && (
+        <div className="animate-fade-in-up">
+          <div className={`rounded-2xl border p-4 mb-4 ${correct ? 'border-green-500/30 bg-green-500/10' : 'border-red-500/30 bg-red-500/10'}`}>
+            <p className={`text-sm font-bold mb-1 ${correct ? 'text-green-400' : 'text-red-400'}`}>
+              {correct ? '✓ Correct!' : '✗ Not quite'}
+            </p>
+            <p className="text-slate-300 text-sm leading-relaxed">{question.explanation}</p>
+          </div>
+          <button
+            onClick={() => onAnswer(correct)}
+            className="w-full bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold py-4 rounded-xl transition-all flex items-center justify-center gap-2"
+          >
+            Next <ChevronRight size={20} />
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function WalkthroughCard({
+  question,
+  onAnswer,
+}: {
+  question: Extract<Question, { type: 'walkthrough' }>;
+  onAnswer: (knew: boolean) => void;
+}) {
+  const [revealed, setRevealed] = useState(false);
+  const [checked, setChecked] = useState<boolean[]>(question.rubric.map(() => false));
+
+  const toggleCheck = (idx: number) => {
+    setChecked(prev => prev.map((v, i) => (i === idx ? !v : v)));
+  };
+
+  return (
+    <div className="animate-fade-in-up">
+      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 mb-4">
+        <h2 className="text-lg font-semibold text-white leading-relaxed">{question.question}</h2>
+      </div>
+
       {!revealed ? (
         <button
-          onClick={handleReveal}
+          onClick={() => setRevealed(true)}
           className="w-full bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold py-4 rounded-xl transition-all"
         >
           Reveal Answer
@@ -73,23 +121,31 @@ function QuestionCard({
       ) : (
         <div className="animate-fade-in-up">
           <div className="bg-slate-900 border border-slate-700 rounded-2xl p-6 mb-4">
-            <p className="text-slate-300 text-sm leading-relaxed mb-4">{question.answer}</p>
-            {question.keyPoints && question.keyPoints.length > 0 && (
-              <div>
-                <p className="text-xs font-bold text-amber-400 uppercase tracking-wider mb-2">Key Points</p>
-                <ul className="space-y-1.5">
-                  {question.keyPoints.map((pt, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-slate-300">
-                      <span className="text-amber-400 font-bold mt-0.5 flex-shrink-0">→</span>
-                      {pt}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
+            <p className="text-xs font-bold text-amber-400 uppercase tracking-wider mb-3">Model Answer</p>
+            <p className="text-slate-300 text-sm leading-relaxed mb-5">{question.modelAnswer}</p>
+            <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Key Points Checklist</p>
+            <div className="space-y-2">
+              {question.rubric.map((point, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => toggleCheck(idx)}
+                  className={`w-full text-left flex items-start gap-3 p-3 rounded-xl border transition-all ${
+                    checked[idx]
+                      ? 'border-green-500/40 bg-green-500/10 text-green-300'
+                      : 'border-slate-700 bg-slate-800/50 text-slate-400 hover:border-slate-600'
+                  }`}
+                >
+                  <span className={`w-5 h-5 rounded border flex-shrink-0 mt-0.5 flex items-center justify-center ${
+                    checked[idx] ? 'border-green-400 bg-green-400/20' : 'border-slate-600'
+                  }`}>
+                    {checked[idx] && <CheckCircle size={12} className="text-green-400" />}
+                  </span>
+                  <span className="text-sm">{point}</span>
+                </button>
+              ))}
+            </div>
           </div>
-
-          <p className="text-center text-slate-400 text-sm mb-3">Did you know this?</p>
+          <p className="text-center text-slate-400 text-sm mb-3">How did you do?</p>
           <div className="flex gap-3">
             <button
               onClick={() => onAnswer(false)}
@@ -107,6 +163,48 @@ function QuestionCard({
             </button>
           </div>
         </div>
+      )}
+    </div>
+  );
+}
+
+function QuestionCard({
+  question,
+  questionNum,
+  totalQuestions,
+  onAnswer,
+}: {
+  question: Question;
+  questionNum: number;
+  totalQuestions: number;
+  onAnswer: (knew: boolean) => void;
+}) {
+  return (
+    <div>
+      <div className="flex items-center justify-between mb-4">
+        <span className="text-slate-400 text-sm">
+          Question {questionNum} of {totalQuestions}
+        </span>
+        <span className={`text-xs font-semibold px-2 py-1 rounded-full border ${difficultyColors[question.difficulty] ?? difficultyColors.beginner}`}>
+          {question.difficulty}
+        </span>
+      </div>
+
+      <div className="w-full bg-slate-800 rounded-full h-1.5 mb-6">
+        <div
+          className="bg-amber-500 h-1.5 rounded-full transition-all duration-500"
+          style={{ width: `${((questionNum - 1) / totalQuestions) * 100}%` }}
+        />
+      </div>
+
+      <span className="text-xs font-medium text-slate-400 bg-slate-800 px-3 py-1 rounded-full mb-4 inline-block">
+        {categoryLabels[question.category]}
+      </span>
+
+      {question.type === 'mcq' ? (
+        <MCQCard question={question} onAnswer={onAnswer} />
+      ) : (
+        <WalkthroughCard question={question} onAnswer={onAnswer} />
       )}
     </div>
   );

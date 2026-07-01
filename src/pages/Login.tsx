@@ -25,12 +25,18 @@ export default function Login() {
   const handleGoogle = async () => {
     setIsLoading(true);
     setError('');
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider: 'google',
-      options: { redirectTo: window.location.origin },
-    });
-    if (error) {
-      setError(error.message);
+    try {
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: { redirectTo: window.location.origin },
+      });
+      if (error) {
+        setError(error.message);
+        triggerShake();
+        setIsLoading(false);
+      }
+    } catch {
+      setError('Unable to connect. Please check your connection and try again.');
       triggerShake();
       setIsLoading(false);
     }
@@ -42,26 +48,30 @@ export default function Login() {
     setError('');
     setInfo('');
 
-    if (mode === 'login') {
-      const { error } = await supabase.auth.signInWithPassword({ email, password });
-      if (error) {
-        setError(error.message);
-        triggerShake();
-      }
-      // on success, App.tsx's onAuthStateChange fires and shows the main UI
-    } else {
-      const { error } = await supabase.auth.signUp({ email, password });
-      if (error) {
-        setError(error.message);
-        triggerShake();
+    try {
+      if (mode === 'login') {
+        const { error } = await supabase.auth.signInWithPassword({ email, password });
+        if (error) {
+          setError(error.message);
+          triggerShake();
+        }
       } else {
-        setInfo('Check your email for a confirmation link, then sign in.');
-        setMode('login');
-        setPassword('');
+        const { error } = await supabase.auth.signUp({ email, password });
+        if (error) {
+          setError(error.message);
+          triggerShake();
+        } else {
+          setInfo('Check your email for a confirmation link, then sign in.');
+          setMode('login');
+          setPassword('');
+        }
       }
+    } catch {
+      setError('Unable to connect. Please check your connection and try again.');
+      triggerShake();
+    } finally {
+      setIsLoading(false);
     }
-
-    setIsLoading(false);
   };
 
   const switchMode = () => {

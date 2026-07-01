@@ -11,10 +11,13 @@ const levelColors: Record<string, string> = {
 
 const courseColors: Record<string, string> = {
   blue: 'from-blue-600/20 to-blue-800/10 border-blue-500/20',
+  teal: 'from-teal-600/20 to-teal-800/10 border-teal-500/20',
   green: 'from-emerald-600/20 to-emerald-800/10 border-emerald-500/20',
   purple: 'from-purple-600/20 to-purple-800/10 border-purple-500/20',
+  indigo: 'from-indigo-600/20 to-indigo-800/10 border-indigo-500/20',
   yellow: 'from-amber-600/20 to-amber-800/10 border-amber-500/20',
   red: 'from-red-600/20 to-red-800/10 border-red-500/20',
+  pink: 'from-pink-600/20 to-pink-800/10 border-pink-500/20',
 };
 
 function CourseCard({ course }: { course: Course }) {

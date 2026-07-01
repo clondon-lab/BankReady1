@@ -20,10 +20,14 @@ export default function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session);
-      setLoading(false);
-    });
+    supabase.auth.getSession()
+      .then(({ data: { session } }) => {
+        setSession(session);
+        setLoading(false);
+      })
+      .catch(() => {
+        setLoading(false);
+      });
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
@@ -36,7 +40,9 @@ export default function App() {
     await supabase.auth.signOut();
   };
 
-  if (loading) return null;
+  if (loading) return (
+    <div style={{ minHeight: '100vh', background: '#0f172a' }} />
+  );
 
   if (!session) return <Login />;
 
