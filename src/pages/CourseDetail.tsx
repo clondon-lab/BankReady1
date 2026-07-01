@@ -108,7 +108,8 @@ export default function CourseDetail() {
   }
 
   const totalLessons = course.sections.reduce((acc, s) => acc + s.lessons.length, 0);
-  const completedCount = completedLessons.size;
+  const courseLessonIds = new Set(course.sections.flatMap(s => s.lessons.map(l => l.id)));
+  const completedCount = [...completedLessons].filter(id => courseLessonIds.has(id)).length;
   const progressPct = Math.round((completedCount / totalLessons) * 100);
 
   const toggleSection = (id: string) => {

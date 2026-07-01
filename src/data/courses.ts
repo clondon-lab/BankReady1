@@ -34,7 +34,7 @@ export const courses: Course[] = [
     icon: '📊',
     color: 'blue',
     level: 'Beginner',
-    duration: '~4 hours',
+    duration: '~2 hours',
     sections: [
       {
         id: 'acct-s1',
@@ -43,7 +43,7 @@ export const courses: Course[] = [
           {
             id: 'acct-l1',
             title: 'What the Three Statements Actually Are',
-            duration: '20 min',
+            duration: '10 min',
             content: `## The Three Statements: Three Camera Angles on One Engine
 
 A company is an engine that turns resources into cash. The three financial statements are three different camera angles on that engine. None of them alone tells the whole story; together they do.
@@ -98,7 +98,7 @@ If you were stranded on a desert island and could see only ONE statement to judg
           {
             id: 'acct-l2',
             title: 'How the Statements Link (the heart of everything)',
-            duration: '20 min',
+            duration: '10 min',
             content: `## How the Statements Link
 
 This is the concept interviewers test more than any other. If you understand it, everything else follows. There are exactly three bridges connecting the statements.
@@ -146,7 +146,7 @@ What are the three links between the statements? Try to answer without looking.
           {
             id: 'acct-l3',
             title: 'The Master Skill: Walk-Through Questions',
-            duration: '25 min',
+            duration: '12 min',
             content: `## The Master Skill: Walking Through Statement Changes
 
 This is the most common technical question format in all of investment banking. The interviewer changes one item and asks you to trace it through all three statements. Build this reflex.
@@ -200,7 +200,7 @@ Think about what A/R *means*: you recorded a sale (revenue), but the customer ha
           {
             id: 'acct-l4',
             title: 'Multi-Year Questions and the Apple Factory Chain',
-            duration: '20 min',
+            duration: '10 min',
             content: `## Multi-Year Questions
 
 Interviewers love multi-step questions where you buy an asset with debt, then run time forward. It tests whether you can hold state across periods.
@@ -252,7 +252,7 @@ After Year 2, what is the PP&E balance? → Started at $100, depreciated $10/yea
           {
             id: 'acct-l5',
             title: 'Accrual Accounting and the Four Mismatches',
-            duration: '20 min',
+            duration: '10 min',
             content: `## Accrual Accounting
 
 **Accrual accounting** records revenue when it's *earned* (goods delivered / service performed) and expenses when they're *incurred* (matched to the revenue they helped generate), regardless of when cash changes hands. GAAP and IFRS require accrual for most companies because it more accurately matches effort to reward within a period.
@@ -288,7 +288,7 @@ If it's consumed in the current period (rent, salaries, utilities), you **expens
           {
             id: 'acct-l6',
             title: 'Key Line Items You Must Understand',
-            duration: '20 min',
+            duration: '10 min',
             content: `## Key Line Items
 
 ### Goodwill
@@ -343,7 +343,7 @@ A company has had positive EBITDA for 10 years but just went bankrupt. How?
     icon: '⚖️',
     color: 'teal',
     level: 'Beginner',
-    duration: '~2.5 hours',
+    duration: '~1.5 hours',
     sections: [
       {
         id: 'ev-s1',
@@ -352,7 +352,7 @@ A company has had positive EBITDA for 10 years but just went bankrupt. How?
           {
             id: 'ev-l1',
             title: 'Equity Value vs. Enterprise Value',
-            duration: '20 min',
+            duration: '10 min',
             content: `## Equity Value vs. Enterprise Value
 
 The entire topic rests on one idea: **who has a claim on the company's cash flows.**
@@ -390,7 +390,7 @@ Enterprise Value shouldn't change just because a company chooses to fund itself 
           {
             id: 'ev-l2',
             title: 'Multiples Pairing — The Most Common Trap',
-            duration: '15 min',
+            duration: '8 min',
             content: `## Multiples Must Be Consistent
 
 The whole reason we distinguish EV from Equity Value is that **valuation multiples must pair the right numerator with the right denominator.** A multiple compares a value measure to a financial metric.
@@ -434,7 +434,7 @@ A company with more debt has a higher or lower P/E ratio than an identical all-e
           {
             id: 'ev-l3',
             title: 'Fully Diluted Shares and Making Metrics Change',
-            duration: '20 min',
+            duration: '10 min',
             content: `## Fully Diluted Shares
 
 Equity Value uses **fully diluted** shares, not just basic shares outstanding. Options, warrants, convertibles, and restricted stock can turn into new shares, so you must count them.
@@ -487,7 +487,7 @@ No. Equity Value = share price × shares. Neither can be negative. (Book equity 
     icon: '💰',
     color: 'green',
     level: 'Intermediate',
-    duration: '~3 hours',
+    duration: '~1.5 hours',
     sections: [
       {
         id: 'val-s1',
@@ -496,7 +496,7 @@ No. Equity Value = share price × shares. Neither can be negative. (Book equity 
           {
             id: 'val-l1',
             title: 'Three Methods — Why We Use All of Them',
-            duration: '15 min',
+            duration: '8 min',
             content: `## The Three Core Methodologies
 
 There are only three main ways to value a company, and every valuation you'll ever do in banking is some combination of them.
@@ -530,7 +530,7 @@ The LBO analysis (covered in its own module) is typically the *lowest* valuation
           {
             id: 'val-l2',
             title: 'Comparable Companies Analysis',
-            duration: '25 min',
+            duration: '12 min',
             content: `## Comparable Companies Analysis (Comps)
 
 **The logic:** If a public company similar to yours trades at 10× EBITDA, and your company has $100 of EBITDA, then your company is worth roughly $1,000 of Enterprise Value. You're using the market's current pricing of peers to imply a value for your target.
@@ -575,7 +575,7 @@ Because P/E is affected by capital structure (interest), taxes, and non-cash D&A
           {
             id: 'val-l3',
             title: 'Precedent Transactions',
-            duration: '20 min',
+            duration: '10 min',
             content: `## Precedent Transactions Analysis
 
 **The logic:** Instead of what similar companies *trade* for, look at what similar companies were actually *acquired* for. If comparable companies sold for 12× EBITDA over the last few years, that's evidence of what an acquirer might pay for your target.
@@ -622,7 +622,7 @@ Two reasons:
           {
             id: 'val-l4',
             title: 'Choosing Methods and Common Questions',
-            duration: '20 min',
+            duration: '10 min',
             content: `## When to Use (and Not Use) Each Method
 
 ### When NOT to Use Certain Methods
@@ -666,7 +666,7 @@ That's informative, not a problem. A DCF far above the comps might mean the mark
     icon: '📉',
     color: 'purple',
     level: 'Intermediate',
-    duration: '~3.5 hours',
+    duration: '~2 hours',
     sections: [
       {
         id: 'dcf-s1',
@@ -675,7 +675,7 @@ That's informative, not a problem. A DCF far above the comps might mean the mark
           {
             id: 'dcf-l1',
             title: 'The Big Idea: Why Discount at All?',
-            duration: '15 min',
+            duration: '8 min',
             content: `## The DCF's Core Idea
 
 The DCF is the crown jewel of valuation because it's the only method that values a company based on its *own* fundamentals rather than what the market thinks of its peers.
@@ -709,7 +709,7 @@ A DCF has exactly two components: projected Free Cash Flows for an explicit peri
           {
             id: 'dcf-l2',
             title: 'Free Cash Flow — Building the Engine',
-            duration: '20 min',
+            duration: '10 min',
             content: `## Free Cash Flow
 
 **Free Cash Flow (FCF)** is the cash a company generates that's genuinely "free" — available to be returned to investors after paying for operations and the investments needed to sustain the business.
@@ -750,7 +750,7 @@ Banking standard is unlevered because it isolates the operating business from fi
           {
             id: 'dcf-l3',
             title: 'The Discount Rate: WACC',
-            duration: '20 min',
+            duration: '10 min',
             content: `## WACC: Weighted Average Cost of Capital
 
 You discount unlevered free cash flows at the **WACC** — the blended rate of return the company must earn to satisfy *all* its investors (debt and equity), weighted by how much of each it uses.
@@ -786,7 +786,7 @@ Equity is riskier for the investor. Debt holders get paid first (contractual cla
           {
             id: 'dcf-l4',
             title: 'Terminal Value — Usually the Majority of the Answer',
-            duration: '20 min',
+            duration: '10 min',
             content: `## Terminal Value
 
 You can't project cash flows forever, so after the explicit 5–10 year window, you capture *everything beyond* in a single **Terminal Value**. There are two methods — know both.
@@ -831,7 +831,7 @@ A good analyst cross-checks: compute the implied exit multiple from the Gordon G
           {
             id: 'dcf-l5',
             title: 'Discounting, Bridging, and Sensitivity',
-            duration: '20 min',
+            duration: '10 min',
             content: `## Discounting to Present Value
 
 Each year's FCF and the Terminal Value are brought to present value by dividing by (1 + WACC) raised to the number of years out:
@@ -888,7 +888,7 @@ A higher WACC → lower valuation (cash flows discounted more heavily). A higher
     icon: '🤝',
     color: 'indigo',
     level: 'Intermediate',
-    duration: '~3 hours',
+    duration: '~1.5 hours',
     sections: [
       {
         id: 'ma-s1',
@@ -897,7 +897,7 @@ A higher WACC → lower valuation (cash flows discounted more heavily). A higher
           {
             id: 'ma-l1',
             title: 'Strategic Rationale and the Deal Process',
-            duration: '20 min',
+            duration: '10 min',
             content: `## Why Companies Do M&A
 
 Companies acquire to:
@@ -945,7 +945,7 @@ Banks build relationships with companies over years. When a company needs a deal
           {
             id: 'ma-l2',
             title: 'How Acquisitions Are Funded',
-            duration: '15 min',
+            duration: '8 min',
             content: `## How an Acquisition Is Paid For
 
 An acquirer can fund a purchase three ways, and the mix drives the accretion/dilution math:
@@ -982,7 +982,7 @@ This ranking is why most deals use cash and debt when possible, and stock when t
           {
             id: 'ma-l3',
             title: 'Accretion / Dilution — The Core Technical Concept',
-            duration: '25 min',
+            duration: '12 min',
             content: `## Accretion / Dilution
 
 **Accretion/dilution** measures whether the combined company's **Earnings Per Share (EPS)** goes *up* (accretive) or *down* (dilutive) compared to the acquirer's standalone EPS after the deal.
@@ -1027,7 +1027,7 @@ Accretion/dilution is a quick sanity check on whether a deal "makes sense" for t
           {
             id: 'ma-l4',
             title: 'Purchase Accounting and the Combined Balance Sheet',
-            duration: '20 min',
+            duration: '10 min',
             content: `## Purchase Accounting
 
 When A acquires B, you rebuild the combined Balance Sheet using **purchase accounting**:
@@ -1074,7 +1074,7 @@ Writing up assets (like PP&E) in a taxable-vs-book sense creates **Deferred Tax 
     icon: '📈',
     color: 'yellow',
     level: 'Advanced',
-    duration: '~4 hours',
+    duration: '~2 hours',
     sections: [
       {
         id: 'lbo-s1',
@@ -1083,7 +1083,7 @@ Writing up assets (like PP&E) in a taxable-vs-book sense creates **Deferred Tax 
           {
             id: 'lbo-l1',
             title: 'The Big Idea: An LBO is a Mortgage',
-            duration: '20 min',
+            duration: '10 min',
             content: `## A Leveraged Buyout is a Mortgage
 
 Imagine buying a $1,000,000 house. You put down $200,000 of your own cash (equity) and borrow $800,000 (debt/mortgage). Tenants' rent pays down the mortgage. After some time you sell the house for $1,200,000. You repay the remaining mortgage and keep the rest. Because you only put in $200,000 but captured the full price appreciation *plus* years of debt paydown, your return is enormous relative to the modest rise in the house's value.
@@ -1114,7 +1114,7 @@ That doubling came *entirely* from debt paydown. Layer in EBITDA growth and a sl
           {
             id: 'lbo-l2',
             title: 'Return Metrics and Ideal LBO Candidates',
-            duration: '20 min',
+            duration: '10 min',
             content: `## Return Metrics
 
 ### IRR — Internal Rate of Return
@@ -1160,7 +1160,7 @@ The same leverage that magnifies gains magnifies losses. If the company underper
           {
             id: 'lbo-l3',
             title: 'The Debt Stack',
-            duration: '20 min',
+            duration: '10 min',
             content: `## The LBO Capital Structure
 
 An LBO stacks multiple layers of debt, each with different risk, cost, and priority. Understanding the **"debt waterfall"** (order of who gets paid) is essential — it mirrors the bankruptcy priority order.
@@ -1191,7 +1191,7 @@ To optimize cost and flexibility. Cheaper senior debt is used as much as lenders
           {
             id: 'lbo-l4',
             title: 'Building the LBO Model (Five Steps)',
-            duration: '25 min',
+            duration: '12 min',
             content: `## The LBO Model — Five Steps
 
 ### Step 1 — Entry: Sources & Uses
@@ -1240,7 +1240,7 @@ PE interviews often ask you to do a paper LBO — walking through the math verba
           {
             id: 'lbo-l5',
             title: 'LBO as a Floor Valuation and Key Interview Questions',
-            duration: '20 min',
+            duration: '10 min',
             content: `## LBO as a Valuation Method
 
 An LBO isn't just how PE firms buy companies — it's also a **valuation methodology**. By fixing a target return (say 20–25% IRR) and working *backwards*, you solve for the **maximum price a PE firm could pay** and still hit that return. This sets a **"floor" valuation** in a football field.
@@ -1282,7 +1282,7 @@ Because PE firms need a high return (20%+), which caps how much they can pay. St
     icon: '🧠',
     color: 'red',
     level: 'Intermediate',
-    duration: '~2 hours',
+    duration: '~1 hour',
     sections: [
       {
         id: 'bt-s1',
@@ -1291,7 +1291,7 @@ Because PE firms need a high return (20%+), which caps how much they can pay. St
           {
             id: 'bt-l1',
             title: 'Speed Math: The Techniques That Matter',
-            duration: '20 min',
+            duration: '10 min',
             content: `## Mental Math for Investment Banking
 
 Bankers do quick math constantly, so interviewers test it. Build these reflexes:
@@ -1347,7 +1347,7 @@ Know these cold:
           {
             id: 'bt-l2',
             title: 'Classic Brain Teaser Types',
-            duration: '20 min',
+            duration: '10 min',
             content: `## Brain Teaser Approach: Process Over Precision
 
 Interviewers watch your *process* as much as your answer. They want to see you stay calm and reason clearly.
@@ -1381,7 +1381,7 @@ Use binary/ternary division — each weighing splits the possibilities. With a b
           {
             id: 'bt-l3',
             title: 'Finance-Flavored Teasers',
-            duration: '15 min',
+            duration: '8 min',
             content: `## Finance-Flavored Brain Teasers
 
 Some teasers wrap finance concepts:
@@ -1433,7 +1433,7 @@ Lean on other signals: user growth, comparable early-stage transactions, DCF onc
     icon: '🎯',
     color: 'pink',
     level: 'Beginner',
-    duration: '~2 hours',
+    duration: '~1 hour',
     sections: [
       {
         id: 'fit-s1',
@@ -1442,7 +1442,7 @@ Lean on other signals: user growth, comparable early-stage transactions, DCF onc
           {
             id: 'fit-l1',
             title: '"Walk Me Through Your Resume" — The Most Important Question',
-            duration: '20 min',
+            duration: '10 min',
             content: `## The Most Important Question
 
 This opens almost every interview, and it frames everything after it. Nail it and the rest flows; fumble it and the interviewer tunes out in 90 seconds.
@@ -1489,7 +1489,7 @@ Your story should make the interviewer think: "This person has a clear, logical 
           {
             id: 'fit-l2',
             title: 'Common Fit Questions — How to Answer Them',
-            duration: '25 min',
+            duration: '12 min',
             content: `## The Big Fit Categories
 
 ### "Why investment banking?"
@@ -1537,7 +1537,7 @@ Name the buyer and seller, the price and key multiples (EV/Revenue, EV/EBITDA) i
           {
             id: 'fit-l3',
             title: 'Understanding Banking and Creative Questions',
-            duration: '15 min',
+            duration: '8 min',
             content: `## "Understanding Banking" Questions
 
 Interviewers (especially of career changers) test whether you actually know what you're signing up for.
