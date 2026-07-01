@@ -119,7 +119,7 @@ function BlitzGame({ onExit }: { onExit: () => void }) {
       ) : (
         <div className="animate-fade-in-up">
           <div className="bg-slate-800 border border-slate-700 rounded-2xl p-5 mb-4 text-sm text-slate-200 leading-relaxed">
-            {q.answer}
+            {q.type === 'mcq' ? `${q.options[q.correctIndex]} — ${q.explanation}` : q.modelAnswer}
           </div>
           <div className="flex gap-3">
             <button onClick={() => handleAnswer(false)} className="flex-1 bg-red-500/20 hover:bg-red-500/30 border border-red-500/30 text-red-400 font-bold py-3 rounded-xl transition-all">
